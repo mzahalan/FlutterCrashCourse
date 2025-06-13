@@ -10,42 +10,42 @@ class AboutPage extends StatelessWidget {
         title: const Text('About Me'),
         backgroundColor: Colors.brown[700],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CircleAvatar(
+             CircleAvatar(
               radius: 50,
               backgroundColor: Colors.brown,
               child: Icon(Icons.person, size: 50, color: Colors.white),
             ),
-            const SizedBox(height: 20),
-            const Text(
+             SizedBox(height: 20),
+             Text(
               'John Doe',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 10),
-            const Text(
+             SizedBox(height: 10),
+             Text(
               'Coffee Enthusiast',
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.grey,
               ),
             ),
-            const SizedBox(height: 20),
-            const Text(
+             SizedBox(height: 20),
+             Text(
               'Bio:',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 10),
-            const Text(
+             SizedBox(height: 10),
+             Text(
               'I am a passionate coffee lover who enjoys trying different coffee varieties from around the world. '
               'My favorite coffee is Ethiopian Yirgacheffe.',
               style: TextStyle(fontSize: 16),
