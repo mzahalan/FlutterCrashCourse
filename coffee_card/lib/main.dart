@@ -31,7 +31,7 @@ enum Mode {
 
 void main() {
   const Mode mode = Mode.course;
-  
+
   switch(mode) {
     case Mode.sandbox:
       runApp(const MaterialApp(home: Sandbox()));
@@ -55,24 +55,23 @@ class Sandbox extends StatelessWidget {
         title: const Text('Sandbox'),
         backgroundColor: Colors.grey,
       ),
-      body: Column(
+      body: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width:100,
+            height: 100,
             color: Colors.red,
             child: const Text('one')),
             Container(
-            width:100,
-            color: Colors.green,
-            child: const Text('two')),
+              height: 100,
+              color: Colors.green,
+              child: const Text('two')),
             Container(
-            width:200,
-            color: Colors.blue,
-            child: const Text('three')),
-        ]
-      ),
+              height: 100,
+              color: Colors.blue,
+              child: const Text('three'))
+        ])
     );
   }
 }
