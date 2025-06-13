@@ -19,6 +19,18 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Hello World!!!');
+    return Container(
+      color: Colors.orange,
+      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.fromLTRB(10,40,0,0),
+      child: const Text('Hello from flutter', style: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        letterSpacing: 4,
+        decoration: TextDecoration.underline,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic
+      ),),
+    );
   }
 }
