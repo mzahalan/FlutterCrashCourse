@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
     
     switch (index) {
       case 1:
-        Navigator.pushNamed(context, '/friends');
+        Navigator.pushNamed(context, '/card');
         break;
       case 2:
         Navigator.pushNamed(context, '/settings');
@@ -104,8 +104,8 @@ class _HomeState extends State<Home> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Friends',
+            icon: Icon(Icons.payment),
+            label: 'Card',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
