@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class CoffeePrefs extends StatelessWidget {
+class CoffeePrefs extends StatefulWidget {
   const CoffeePrefs({super.key});
-  
+
+  @override
+  State<CoffeePrefs> createState() => _CoffeePrefsState();
+}
+
+class _CoffeePrefsState extends State<CoffeePrefs> {
+
+  int strength = 3;
+  int sugars = 3;
+
   void increaseStrength() {
-    print('strength increased');
+    setState(()=>strength++);
   }
-  void increaseSugar() {
-    print('sugar increased');
-  } 
-  void decreaseStrength() {
-    print('strength decreased');
-  } 
-  void decreaseSugar() {
-    print('sugar decreased');
-  } 
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class CoffeePrefs extends StatelessWidget {
         Row(
           children: [
             const Text('Strength: '),
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < strength; i++)
               Image.asset(
                 'assets/img/coffee_bean.png',
                 width: 25,
@@ -32,7 +32,7 @@ class CoffeePrefs extends StatelessWidget {
               ),
             const Expanded(child: SizedBox()),
             IconButton(
-              onPressed: (){}, 
+              onPressed: (){setState(()=>strength--);}, 
               icon: const Icon(Icons.remove),
               style: FilledButton.styleFrom(backgroundColor: Colors.brown, foregroundColor: Colors.white),),
             IconButton(
@@ -44,7 +44,7 @@ class CoffeePrefs extends StatelessWidget {
         Row(
           children: [
             const Text('Sugars: '),
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < sugars; i++)
               Image.asset(
                 'assets/img/sugar_cube.png',
                 width: 25,
@@ -52,8 +52,8 @@ class CoffeePrefs extends StatelessWidget {
                 colorBlendMode: BlendMode.multiply,
               ),
             const Expanded(child: SizedBox()),
-            IconButton(onPressed: (){}, icon: const Icon(Icons.remove)),
-            IconButton(onPressed: increaseSugar, icon: const Icon(Icons.add)),
+            IconButton(onPressed: ()=>setState(()=>sugars--), icon: const Icon(Icons.remove)),
+            IconButton(onPressed: ()=>setState(()=>sugars++), icon: const Icon(Icons.add)),
           ]
         ),
       ],
