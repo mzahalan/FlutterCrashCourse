@@ -1,3 +1,5 @@
+import 'package:coffee_card/widgets/styled_body_text.dart';
+import 'package:coffee_card/widgets/styled_button.dart';
 import 'package:flutter/material.dart';
 
 class CoffeePrefs extends StatefulWidget {
@@ -35,7 +37,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
       children: [
         Row(
           children: [
-            const Text('Strength: '),
+            const StyledBodyText('Strength: '),
             for(int i = 0; i < strength; i++)
               Image.asset(
                 'assets/img/coffee_bean.png',
@@ -44,20 +46,18 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
                 colorBlendMode: BlendMode.multiply,
               ),
             const Expanded(child: SizedBox()),
-            IconButton(
+            StyledButton(
               onPressed: ()=>setStrength(-1), 
-              icon: const Icon(Icons.remove),
-              style: FilledButton.styleFrom(backgroundColor: Colors.brown, foregroundColor: Colors.white),),
-            IconButton(
+              child: const Text('-')),
+            StyledButton(
               onPressed: ()=>setStrength(1), 
-              icon: const Icon(Icons.add),
-              style: FilledButton.styleFrom(backgroundColor: Colors.brown, foregroundColor: Colors.white)),
+              child: const Text('+')),
           ],
         ),
         Row(
           children: [
-            const Text('Sugars: '),
-            if (sugars == 0) const Text('None') 
+            const StyledBodyText('Sugars: '),
+            if (sugars == 0) const StyledBodyText('None') 
             else for (int i = 0; i < sugars; i++)
               Image.asset(
                 'assets/img/sugar_cube.png',
@@ -66,8 +66,8 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
                 colorBlendMode: BlendMode.multiply,
               ),
             const Expanded(child: SizedBox()),
-            IconButton(onPressed: ()=>setSugars(-1), icon: const Icon(Icons.remove)),
-            IconButton(onPressed: ()=>setSugars(1), icon: const Icon(Icons.add)),
+            StyledButton(onPressed: ()=>setSugars(-1), child: const Icon(Icons.remove)),
+            StyledButton(onPressed: ()=>setSugars(1), child: const Icon(Icons.add)),
           ]
         ),
       ],

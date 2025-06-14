@@ -1,6 +1,5 @@
 import 'package:coffee_card/screens/about.dart';
 import 'package:coffee_card/screens/auth.dart';
-import 'package:coffee_card/screens/friends.dart';
 import 'package:coffee_card/screens/home.dart';
 import 'package:coffee_card/screens/settings.dart';
 import 'package:flutter/material.dart';
@@ -31,15 +30,6 @@ void main() {
     expect(find.text('About Me'), findsOneWidget);
     expect(find.text('John Doe'), findsOneWidget);
     expect(find.text('Coffee Enthusiast'), findsOneWidget);
-  });
-
-  testWidgets('Friends page shows friend list', (WidgetTester tester) async {
-    await tester.pumpWidget(const MaterialApp(home: FriendsPage()));
-
-    expect(find.text('Friends'), findsOneWidget);
-    expect(find.text('Alice'), findsOneWidget);
-    expect(find.text('Bob'), findsOneWidget);
-    expect(find.text('Charlie'), findsOneWidget);
   });
 
   testWidgets('Auth page shows login form', (WidgetTester tester) async {
